@@ -1,0 +1,224 @@
+====== DOCUMENT: eval_inv_1 ======
+PROVIDER: SynthCorp | BILLING DOC: INV-EVAL-993 | ISSUED: 2024-10-17
+EXPECTED PAYMENT DATE: 2025-09-05
+CURRENCY DOMAIN: EUR
+1x Software License Rev_2 @ 360.0/ea
+3x Capacitor Rev_1 @ 10.5/ea
+3x Software License Rev_2 @ 356.0/ea
+BASE COST: 1459.5
+APPLIED TAX: 145.95
+FINAL AMOUNT: 1605.45
+===============================================
+
+====== DOCUMENT: eval_inv_2 ======
+PROVIDER: Tyrell Corp | BILLING DOC: INV-EVAL-176 | ISSUED: 2024-05-18
+CURRENCY DOMAIN: EUR
+3x Capacitor Rev_1 @ 3.5/ea
+5x Audit Service Rev_3 @ 207.0/ea
+BASE COST: 1045.5
+FINAL AMOUNT: 1045.5
+===============================================
+
+====== DOCUMENT: eval_inv_3 ======
+PROVIDER: Omni Consumer | BILLING DOC: INV-EVAL-777 | ISSUED: 2024-11-30
+EXPECTED PAYMENT DATE: 2025-08-27
+CURRENCY DOMAIN: USD
+1x Capacitor Rev_2 @ 11.5/ea
+BASE COST: 11.5
+APPLIED TAX: 1.15
+FINAL AMOUNT: 12.65
+===============================================
+
+====== DOCUMENT: eval_inv_4 ======
+PROVIDER: Tyrell Corp | BILLING DOC: INV-EVAL-914 | ISSUED: 2024-05-20
+EXPECTED PAYMENT DATE: 2025-01-22
+CURRENCY DOMAIN: EUR
+4x Microchip Rev_5 @ 14.0/ea
+2x Capacitor Rev_1 @ 4.5/ea
+2x Microchip Rev_5 @ 5.0/ea
+3x Software License Rev_2 @ 352.0/ea
+BASE COST: 1131.0
+APPLIED TAX: 113.1
+FINAL AMOUNT: 1244.1
+===============================================
+
+====== DOCUMENT: eval_inv_5 ======
+PROVIDER: Sirius Cybernetics | BILLING DOC: INV-EVAL-704 | ISSUED: 2024-06-22
+EXPECTED PAYMENT DATE: 2025-02-20
+CURRENCY DOMAIN: USD
+1x Audit Service Rev_5 @ 206.0/ea
+1x Microchip Rev_4 @ 9.0/ea
+3x Audit Service Rev_1 @ 207.0/ea
+4x Audit Service Rev_1 @ 200.0/ea
+BASE COST: 1636.0
+APPLIED TAX: 163.6
+FINAL AMOUNT: 1799.6
+===============================================
+
+====== DOCUMENT: eval_inv_6 ======
+PROVIDER: Sirius Cybernetics | BILLING DOC: INV-EVAL-961 | ISSUED: 2024-02-21
+CURRENCY DOMAIN: GBP
+5x Microchip Rev_3 @ 12.0/ea
+BASE COST: 60.0
+FINAL AMOUNT: 60.0
+===============================================
+
+====== DOCUMENT: eval_inv_7 ======
+PROVIDER: Omni Consumer | BILLING DOC: INV-EVAL-544 | ISSUED: 2024-07-26
+CURRENCY DOMAIN: INR
+3x Audit Service Rev_5 @ 209.0/ea
+BASE COST: 627.0
+FINAL AMOUNT: 627.0
+===============================================
+
+====== DOCUMENT: eval_inv_8 ======
+PROVIDER: SynthCorp | BILLING DOC: INV-EVAL-885 | ISSUED: 2024-06-05
+EXPECTED PAYMENT DATE: 2025-01-25
+CURRENCY DOMAIN: EUR
+3x Audit Service Rev_2 @ 209.0/ea
+1x Sensor Array Rev_4 @ 94.0/ea
+1x Audit Service Rev_4 @ 206.0/ea
+5x Fiber Optic Cable Rev_5 @ 17.0/ea
+BASE COST: 1012.0
+APPLIED TAX: 101.2
+FINAL AMOUNT: 1113.2
+===============================================
+
+====== DOCUMENT: eval_inv_9 ======
+PROVIDER: Omni Consumer | BILLING DOC: INV-EVAL-457 | ISSUED: 2024-01-26
+CURRENCY DOMAIN: INR
+2x Sensor Array Rev_5 @ 85.0/ea
+3x Software License Rev_1 @ 357.0/ea
+3x Software License Rev_3 @ 354.0/ea
+BASE COST: 2303.0
+FINAL AMOUNT: 2303.0
+===============================================
+
+====== DOCUMENT: eval_inv_10 ======
+PROVIDER: Tyrell Corp | BILLING DOC: INV-EVAL-682 | ISSUED: 2024-02-24
+EXPECTED PAYMENT DATE: 2025-07-31
+CURRENCY DOMAIN: USD
+3x Fiber Optic Cable Rev_3 @ 18.0/ea
+1x Capacitor Rev_2 @ 11.5/ea
+1x Software License Rev_5 @ 359.0/ea
+4x Audit Service Rev_5 @ 204.0/ea
+BASE COST: 1240.5
+APPLIED TAX: 124.05
+FINAL AMOUNT: 1364.55
+===============================================
+
+====== DOCUMENT: eval_inv_11 ======
+PROVIDER: Tyrell Corp | BILLING DOC: INV-EVAL-846 | ISSUED: 2024-06-13
+CURRENCY DOMAIN: CAD
+5x Capacitor Rev_5 @ 2.5/ea
+2x Sensor Array Rev_1 @ 90.0/ea
+5x Fiber Optic Cable Rev_2 @ 15.0/ea
+BASE COST: 267.5
+FINAL AMOUNT: 267.5
+===============================================
+
+====== DOCUMENT: eval_inv_12 ======
+PROVIDER: Spacely Sprockets | BILLING DOC: INV-EVAL-580 | ISSUED: 2024-10-26
+CURRENCY DOMAIN: GBP
+2x Fiber Optic Cable Rev_4 @ 12.0/ea
+4x Software License Rev_1 @ 352.0/ea
+5x Fiber Optic Cable Rev_4 @ 16.0/ea
+BASE COST: 1512.0
+FINAL AMOUNT: 1512.0
+===============================================
+
+====== DOCUMENT: eval_po_1 ======
+PURCHASE REQUISITION: PO-EVAL-172
+ISSUED BY: Buy n Large
+VENDOR: Weyland-Yutani
+DATE OF ORIGIN: 2024-12-23
+TRADE CURRENCY: CAD
+* Bulk Audit Service (Quantity: 45, Rate: 202.0)
+* Bulk Microchip (Quantity: 23, Rate: 10.0)
+* Bulk Microchip (Quantity: 13, Rate: 7.0)
+* Bulk Fiber Optic Cable (Quantity: 18, Rate: 15.0)
+GROSS REQUIREMENT: 9681.0
+===============================================
+
+====== DOCUMENT: eval_po_2 ======
+PURCHASE REQUISITION: PO-EVAL-937
+ISSUED BY: Omni Consumer
+VENDOR: Weyland-Yutani
+DATE OF ORIGIN: 2024-03-17
+TRADE CURRENCY: CAD
+* Bulk Software License (Quantity: 17, Rate: 350.0)
+GROSS REQUIREMENT: 5950.0
+===============================================
+
+====== DOCUMENT: eval_po_3 ======
+PURCHASE REQUISITION: PO-EVAL-383
+ISSUED BY: Weyland-Yutani
+VENDOR: Garrick Industries
+DATE OF ORIGIN: 2024-09-22
+MUST DELIVER BY: 2025-08-04
+TRADE CURRENCY: INR
+* Bulk Capacitor (Quantity: 24, Rate: 3.5)
+GROSS REQUIREMENT: 84.0
+===============================================
+
+====== DOCUMENT: eval_po_4 ======
+PURCHASE REQUISITION: PO-EVAL-402
+ISSUED BY: Tyrell Corp
+VENDOR: SynthCorp
+DATE OF ORIGIN: 2024-12-30
+MUST DELIVER BY: 2025-09-04
+TRADE CURRENCY: EUR
+* Bulk Capacitor (Quantity: 10, Rate: 1.5)
+* Bulk Sensor Array (Quantity: 37, Rate: 90.0)
+* Bulk Audit Service (Quantity: 11, Rate: 204.0)
+* Bulk Audit Service (Quantity: 20, Rate: 203.0)
+GROSS REQUIREMENT: 9649.0
+===============================================
+
+====== DOCUMENT: eval_po_5 ======
+PURCHASE REQUISITION: PO-EVAL-631
+ISSUED BY: SynthCorp
+VENDOR: Cogswell Cogs
+DATE OF ORIGIN: 2024-11-13
+TRADE CURRENCY: GBP
+* Bulk Microchip (Quantity: 49, Rate: 7.0)
+* Bulk Sensor Array (Quantity: 16, Rate: 89.0)
+* Bulk Sensor Array (Quantity: 31, Rate: 87.0)
+* Bulk Fiber Optic Cable (Quantity: 22, Rate: 17.0)
+GROSS REQUIREMENT: 4838.0
+===============================================
+
+====== DOCUMENT: eval_po_6 ======
+PURCHASE REQUISITION: PO-EVAL-174
+ISSUED BY: Sirius Cybernetics
+VENDOR: Cogswell Cogs
+DATE OF ORIGIN: 2024-03-06
+TRADE CURRENCY: GBP
+* Bulk Audit Service (Quantity: 21, Rate: 202.0)
+* Bulk Audit Service (Quantity: 23, Rate: 203.0)
+GROSS REQUIREMENT: 8911.0
+===============================================
+
+====== DOCUMENT: eval_po_7 ======
+PURCHASE REQUISITION: PO-EVAL-322
+ISSUED BY: NovaTech
+VENDOR: Omni Consumer
+DATE OF ORIGIN: 2024-02-09
+MUST DELIVER BY: 2025-05-07
+TRADE CURRENCY: USD
+* Bulk Capacitor (Quantity: 10, Rate: 2.5)
+GROSS REQUIREMENT: 25.0
+===============================================
+
+====== DOCUMENT: eval_po_8 ======
+PURCHASE REQUISITION: PO-EVAL-327
+ISSUED BY: Spacely Sprockets
+VENDOR: Cogswell Cogs
+DATE OF ORIGIN: 2024-02-19
+MUST DELIVER BY: 2025-08-11
+TRADE CURRENCY: INR
+* Bulk Audit Service (Quantity: 42, Rate: 200.0)
+* Bulk Audit Service (Quantity: 27, Rate: 205.0)
+* Bulk Sensor Array (Quantity: 38, Rate: 87.0)
+GROSS REQUIREMENT: 17241.0
+===============================================
