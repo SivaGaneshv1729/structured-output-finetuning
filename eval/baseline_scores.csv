@@ -1,0 +1,21 @@
+filename,raw_output_first_50_chars,is_valid_json,has_all_required_keys,key_accuracy,value_accuracy,notes
+eval_inv_1,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_inv_2,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_inv_3,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_inv_4,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_inv_5,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_inv_6,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_inv_7,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_inv_8,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_inv_9,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_inv_10,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_inv_11,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_inv_12,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_po_1,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_po_2,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_po_3,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_po_4,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_po_5,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_po_6,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_po_7,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
+eval_po_8,```json ERROR: Error code: 400 - {'error': {'messa,False,False,0.0,0.0,contains_markdown_fence; invalid_json_syntax
