@@ -1,0 +1,21 @@
+filename,raw_output_first_50_chars,is_valid_json,has_all_required_keys,key_accuracy,value_accuracy,notes
+eval_inv_1,"```json {   ""vendor"": ""SynthCorp"",   ""invoice_numb",True,True,1.0,1.0,perfect
+eval_inv_2,"```json {   ""vendor"": ""Tyrell Corp"",   ""invoice_nu",True,True,1.0,0.89,value_mismatch:invoice_number
+eval_inv_3,"```json {   ""vendor"": ""Omni Consumer"",   ""invoice_",True,True,1.0,1.0,perfect
+eval_inv_4,"```json {   ""vendor"": ""Tyrell Corp"",   ""invoice_nu",True,True,1.0,1.0,perfect
+eval_inv_5,"```json {   ""vendor"": ""Sirius Cybernetics"",   ""inv",True,True,1.0,1.0,perfect
+eval_inv_6,"```json {   ""vendor"": ""Sirius Cybernetics"",   ""inv",True,True,1.0,1.0,perfect
+eval_inv_7,"```json {   ""vendor"": ""Omni Consumer"",   ""invoice_",True,True,1.0,1.0,perfect
+eval_inv_8,"```json {   ""vendor"": ""SynthCorp"",   ""invoice_numb",True,True,1.0,1.0,perfect
+eval_inv_9,"```json {   ""vendor"": ""Omni Consumer"",   ""invoice_",True,True,1.0,1.0,perfect
+eval_inv_10,"```json {   ""vendor"": ""Tyrell Corp"",   ""invoice_nu",True,True,1.0,1.0,perfect
+eval_inv_11,"```json {   ""vendor"": ""Tyrell Corp"",   ""invoice_nu",True,True,1.0,1.0,perfect
+eval_inv_12,"```json {   ""vendor"": ""Spacely Sprockets"",   ""invo",True,True,1.0,1.0,perfect
+eval_po_1,"```json {   ""vendor"": ""Weyland-Yutani"",   ""supplie",True,False,0.5,0.75,"value_mismatch:delivery_date; missing_keys:total,buyer,supplier,date"
+eval_po_2,"```json {   ""vendor"": ""Weyland-Yutani"",   ""supplie",True,False,0.62,0.8,"value_mismatch:supplier; missing_keys:delivery_date,po_number,buyer"
+eval_po_3,"```json {   ""buyer"": ""Weyland-Yutani"",   ""supplier",True,True,1.0,1.0,perfect
+eval_po_4,"```json {   ""vendor"": ""SynthCorp"",   ""supplier"": n",True,False,0.88,0.86,value_mismatch:supplier; missing_keys:buyer
+eval_po_5,"```json {   ""vendor"": ""Cogswell Cogs"",   ""supplier",True,False,0.5,1.0,"missing_keys:delivery_date,po_number,buyer,supplier"
+eval_po_6,"```json {   ""vendor"": ""Cogswell Cogs"",   ""supplier",True,False,0.75,0.67,"value_mismatch:supplier; value_mismatch:total; missing_keys:buyer,items"
+eval_po_7,"```json {   ""buyer"": ""NovaTech"",   ""supplier"": ""Om",True,True,1.0,1.0,perfect
+eval_po_8,"```json {   ""vendor"": ""Cogswell Cogs"",   ""supplier",True,False,0.75,1.0,"missing_keys:buyer,supplier"
