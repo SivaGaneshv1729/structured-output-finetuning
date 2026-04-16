@@ -1,44 +1,82 @@
-# Structured Output Fine-Tuning: Llama 3.2
+# Structured Output Extraction: Llama 3.2 Fine-Tuning 🦙
 
-This project fine-tunes a Llama 3.2 3B Instruct model using LoRA to reliably extract consistently keyed, machine-parseable JSON data from unstructured business documents (Invoices and Purchase Orders).
+![Llama 3.2](https://img.shields.io/badge/Llama--3.2-3B--Instruct-blue)
+![Fine-Tuning](https://img.shields.io/badge/Fine--Tuning-LoRA-orange)
+![Status](https://img.shields.io/badge/Status-Completed-success)
 
-By conforming strictly to the "No Custom Python Application" rule, all execution relies entirely on UI-based fine-tuning software (LlamaFactory/Unsloth) and manual qualitative evaluation.
+## Overview
+This repository contains the complete dataset, evaluation methodology, and performance findings for fine-tuning the **Llama-3.2-3B-Instruct** model to perform highly reliable, machine-parseable structured data extraction (JSON) from unstructured business documents like Invoices and Purchase Orders.
+
+The core challenge addressed in this project is **formatting reliability in Enterprise AI**. While base LLMs are highly capable of semantic extraction, they frequently suffer from formatting drift (hallucinating conversational prose or markdown fences around outputs), entirely breaking downstream deterministic automation pipelines (e.g., `json.loads()`).
+
+This project proves that **Parameter-Efficient Fine-Tuning (PEFT) via LoRA** fundamentally outperforms advanced prompt engineering to achieve strict syntactic mastery.
 
 ---
 
-## How to Run and Reproduce This Project Manually
+## 🏗️ Repository Architecture
 
-If you wish to independently verify the dataset, fine-tune the model yourself, and evaluate the results, follow this strict manual pipeline:
+All execution was restricted to non-programming UI abstractions (Unsloth Notebooks/LlamaFactory) per project constraints. The intellectual architecture focuses purely on data engineering and evaluation.
 
-### 1. Review the Curation Rules
-1. Read `schema/invoice_schema.md` and `schema/po_schema.md` to understand the strict JSON constraints and `null` handling rules.
-2. The core dataset is located at `data/curated_train.jsonl`, consisting of 80 carefully constructed pairs of raw document text mapped to their mathematically perfect JSON outputs.
-3. Review `data/curation_log.md` to see the qualitative selection process for maintaining layout diversity.
+```text
+llama3-json-extraction/
+├── schema/                 # Strict JSON schema definitions for extraction
+│   ├── invoice_schema.md
+│   └── po_schema.md
+├── data/                   # The 80-example synthetic curation pipeline
+│   ├── curated_train.jsonl
+│   └── curation_log.md
+├── eval/                   # Ablation and post-tuning evaluation data
+│   ├── baseline_scores.csv
+│   ├── finetuned_scores.csv
+│   ├── before_vs_after.md
+│   └── failures/           # Deep-dive root-cause matrix on remaining errors
+├── prompts/                # Heavily engineered baseline prompt iterations
+├── training_config.md      # LoRA hyperparameter justifications
+├── report.md               # Final thesis comparing SFT vs Prompting
+└── README.md
+```
 
-### 2. Run the Baseline Evaluation
-1. Boot up **LlamaFactory** (or Open WebUI) in your GPU environment and load the base `Llama-3.2-3B-Instruct` model.
-2. Navigate to the **Inference / Chat Tab**.
-3. For an evaluation document of your choosing, paste the text alongside the structural rule: *"Extract all fields and return ONLY a valid JSON object. No explanation, no markdown, no code fences."*
-4. You will observe the model frequently violating strict formatting constraints (e.g., hallucinating markdown fences).
-5. Compare your manual tests against our recorded results in `eval/baseline_responses.md` and `eval/baseline_scores.csv`.
+---
 
-### 3. Execute LoRA Fine-Tuning
-1. In LlamaFactory's **Train Tab** (or an Unsloth SFT Notebook workflow), upload `data/curated_train.jsonl` as your training dataset.
-2. Configure the LoRA adapters exactly as documented in `training_config.md`:
-   * **Rank ($r$):** 16
-   * **Alpha ($\alpha$):** 32
-   * **Target Modules:** All attention and MLP layers (`q_proj`, `v_proj`, etc.)
-   * **Learning Rate:** `2e-4`
-3. Hit "Train" and observe the loss curve smoothly decrease over ~10 epochs.
+## 🔬 Methodology
 
-### 4. Post-Tuning Evaluation
-1. Load your newly generated fine-tuned LoRA weights into the Inference Tab.
-2. Manually query the exact same evaluation documents again.
-3. You will immediately notice the complete cessation of conversational tokens and markdown fences. 
-4. Calculate the new Parse Success Rate by verifying syntax validity. Compare your manual scores against our side-by-side analysis located in `eval/before_vs_after.md`.
+### 1. Zero-Shot Ablation Baseline
+The base `Llama-3.2-3B-Instruct` model was evaluated zero-shot against 20 completely held-out, unseen complex business documents. 
+**Result:** `0.0% Parse Success Rate`. Across all 20 variations, the base model failed to return pure, headless JSON, wrapping outputs in ```json blocks or injecting conversational context limits.
 
-### 5. Review Failure Analysis
-Not all inferences will be perfect post-tuning. Check `eval/failures/` to review manual root-cause diagnoses on the final remaining failures, tracing them back to sparse layouts and density issues.
+### 2. Dataset Curation
+A high-variance `curated_train.jsonl` dataset was synthesized containing exactly 80 examples (50 Invoices, 30 POs).
+* **Negative Constraints:** Enforced mapping missing document intelligence strictly to `null` to penalize hallucination behavior.
+* **Layout Variance:** Documents spanned tabular layouts, chaotic OCR strings, and prose paragraphs to prevent layout overfitting.
 
-### 6. Prompt Engineering vs SFT Comparison
-If attempting to fix baseline issues using few-shot templates instead of fine-tuning, you will find it highly token-inefficient and intrinsically brittle. See `report.md` and `prompts/prompt_iterations.md` for our manual tests and conclusions regarding the operational superiority of SFT for structured extraction.
+### 3. LoRA Adapters
+Fine-Tuning was executed natively on a Tesla T4 GPU using Unsloth.
+* **LoRA Rank ($r$):** `16` (Optimal capacity for capturing syntax matrices without eroding semantic parameters).
+* **LoRA Alpha ($\alpha$):** `32`
+* **Target Modules:** All Attention & MLP Projections (`q_proj`, `v_proj`, `up_proj`, etc.)
+* **Learning Rate:** `2e-4`
+* **Epochs:** `~10` (100 Steps). Loss cleanly converged to `0.13`.
+
+---
+
+## 📊 Results Summary
+
+Applying the trained adapters to the exact same 20 blind evaluation documents yielded a monumental shift in reliability.
+
+| Metric | Baseline (Base Llama 3.2 3B) | Post Fine-Tuning (LoRA Rank 16) |
+|--------|---------------------------|-------------------|
+| **Parse Success Rate** | 0.0% | **70.0%** |
+| Avg Key Accuracy | 43.1% | 85.5% |
+| Avg Value Accuracy | 41.2% | 82.3% |
+| Markdown Fence Failures | 20 / 20 | 0 / 20 |
+
+**Conclusion:** The fine-tuning completely eradicated markdown fences and prose preamble, driving Parse Success Rate from zero up to 70%—a staggering performance leap for an 80-example training set. The remaining 30% of failures (analyzed globally in `eval/failures/`) were highly correlated with ultra-sparse outlier structures, requiring only minor synthetic up-sampling to solve. As outlined in `report.md`, SFT scales economically and deterministically far beyond what few-shot Prompt Engineering allows.
+
+---
+
+## ⚙️ Manual Reproduction 
+To perfectly recreate these results using LlamaFactory or Unsloth:
+1. Load `data/curated_train.jsonl` into your SFT node.
+2. Apply the hyperparameters defined in `training_config.md`.
+3. Pass the raw text of the 20 documents tracked inside `eval/baseline_responses.md` into your inference terminal using the zero-shot instruction prompt constraint. 
+4. Verify JSON conformance against the expected parameters detailed in `schema/`.
